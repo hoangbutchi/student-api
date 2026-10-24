@@ -26,8 +26,6 @@ public class AuthServiceimplTest {
 //    @Mock: Mockito tạo một StudentRepository giả. Nó không nối MySQL, ban đầu trả null hoặc rỗng cho mọi lời gọi.
     private UserRepository userRepository;
     //@InjectMocks: Mockito tạo StudentServiceImpl thật, rồi nhét cái repository giả vào field @Autowired private StudentRepository studentRepository bên trong nó
-    @Mock
-    private AuthServiceImpl authService;
 
     @Mock
     private PasswordEncoder passwordEncoder;
@@ -36,7 +34,7 @@ public class AuthServiceimplTest {
     private JwtUtil jwtUtil;
 
     @InjectMocks
-    private AuthServiceImpl AuthService;
+    private AuthServiceImpl authService;
 
     @Test
     void login_khidungpassword_travetoken(){
@@ -50,7 +48,7 @@ public class AuthServiceimplTest {
 
         LoginResponse result = authService.login(request);
 
-        assertEquals("token-gia", result.getToken());
+        assertEquals("tokenfake", result.getToken());
         assertEquals("ADMIN", result.getRole());
 
 

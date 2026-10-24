@@ -5,7 +5,7 @@ import com.example.studentapi.dto.TeacherRequest;
 import com.example.studentapi.dto.TeacherResponse;
 import com.example.studentapi.entity.Teacher;
 import com.example.studentapi.exception.TeacherNotFoundException;
-import com.example.studentapi.repository.TeacherRepository;
+import com.example.studentapi.repository.teacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
-    private TeacherRepository TeacherRepository;
+    private teacherRepository TeacherRepository;
 
     // Convert Entity -> Response DTO
     private TeacherResponse toResponse(Teacher Teacher) {
